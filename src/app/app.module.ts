@@ -8,12 +8,17 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpBackend, HttpXhrBackend } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpBackend,
+  HttpXhrBackend,
+} from '@angular/common/http';
 import {
   NativeHttpBackend,
   NativeHttpFallback,
   NativeHttpModule,
 } from 'ionic-native-http-connection-backend';
+import { LoggingInterceptor } from './logging.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +38,7 @@ import {
       useClass: NativeHttpFallback,
       deps: [Platform, NativeHttpBackend, HttpXhrBackend],
     },
+    { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })
