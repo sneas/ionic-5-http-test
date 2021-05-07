@@ -4,6 +4,9 @@
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
+  "ios": {
+    "contentInset": "always"
+  },
   "cordova": {},
   "server": {
     "url": "http://192.168.86.173:8100",

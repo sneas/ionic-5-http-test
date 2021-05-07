@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ModalPageComponent } from '../modal-page/modal-page.component';
 
 @Component({
   selector: 'app-explore-container',
@@ -8,7 +10,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ExploreContainerComponent implements OnInit {
   @Input() name: string;
 
-  constructor() {}
+  constructor(public modalController: ModalController) {}
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: ModalPageComponent,
+      cssClass: 'my-custom-class',
+    });
+
+    return await modal.present();
+  }
 
   ngOnInit() {}
 }
