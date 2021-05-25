@@ -1,7 +1,0 @@
-{
-  "name": "ionic-5-http-test",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
