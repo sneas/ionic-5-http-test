@@ -1,12 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "ionic-5-http-test",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
+  "appName": "ionic-5-cap-3",
   "webDir": "www",
-  "cordova": {},
-  "server": {
-    "url": "http://192.168.86.173:8100",
-    "cleartext": true
-  }
+  "bundledWebRuntime": false
 }
