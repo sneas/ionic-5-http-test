@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import {HttpClient, HttpParams} from "@angular/common/http";
-import {HTTP} from "@ionic-native/http/ngx";
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { HTTP } from '@ionic-native/http/ngx';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
-
   constructor(private httpClient: HttpClient, private http: HTTP) {
     this.httpClient
       .delete('https://httpbin.org/delete?with=%20wierd%20variables%20', {
@@ -26,5 +25,4 @@ export class Tab1Page {
         console.log('http data', data.data);
       });
   }
-
 }
