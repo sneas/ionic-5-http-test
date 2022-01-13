@@ -11,5 +11,9 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <p>Response:</p>
+  {{ httpResponse | json }}
+
+  <p>Cordova Plugin Response:</p>
+  {{ nativeResponse | json }}
 </ion-content>
